@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+    <title>This is a test :-)</title>
+
+	<!-- CSS for presentation. -->
+    <style>
+    h1 { font-size: 18px; color: blue; }
+    h2 { font-size: 14px; color: green; }
+    button { font-size: 14px; color: red; }
+    </style>
+
+	<!-- JavaScript for interactivity. -->
+	<script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+	    	var button = document.querySelector("#helpButton");
+	    	button.addEventListener( "click", function( ev ) {
+	    		console.log('Help button clicked');
+	        	alert( "Enter your name in the box" );
+	    	}, false);
+	
+			var name = $('#name');
+			var greeting = $('#greeting');
+
+			name.keyup(function () {
+				greeting.text('Hello ' + name.val() + '!');
+			})
+		})
+	</script>
+</head>
+<body>
+	<h1 id="boxName">
+		Bonjour :-)
+	</h1>
+
+	<button id="helpButton">
+		Click Me!
+	</button>
+
+	<input id="name" type="text">
+	
+	<h2 id="greeting">
+	</h2>
+</body>
+</html>
